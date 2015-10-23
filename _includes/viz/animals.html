@@ -1,0 +1,54 @@
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-sm-12">
+							
+			<script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+					{year: 'FY 2011', waittime: 57.06},
+					{year: 'FY 2012', waittime: 57.8},
+					{year: 'FY 2013', waittime: 63.53},
+					{year: 'FY 2014', waittime: 70.27, goal: 73},
+					{year: 'FY 2015', waittime: 70.3, goal: 75},
+
+				];
+				$("#bar-7").dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: "year"
+					},
+					series: [
+						{ valueField: "waittime", name: "Animal Live/Save Rate", color: "#7c38bc" },
+						{ valueField: "goal", name: "Goal ", color: "#990000" },
+						
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: "Animal Live/Save Rate",
+					legend: {
+						verticalAlignment: "bottom",
+						horizontalAlignment: "center"
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			</script>
+			<div id="bar-7" style="height: 250px; width: 100%;"></div>
+		</div>
+	</div>
+</div>												

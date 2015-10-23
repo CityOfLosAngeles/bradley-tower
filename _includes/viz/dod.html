@@ -1,0 +1,50 @@
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-sm-12">
+							
+			<script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+					{year: 'FY 2014', waittime: 4284},
+					{year: 'FY 2015', waittime: 1844},
+
+				];
+				$("#bar-7").dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: "year"
+					},
+					series: [
+						{ valueField: "waittime", name: "Number of City Employees", color: "#7c38bc" },
+						
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: "Number of City Employees Receiving Disability Rights Training",
+					legend: {
+						verticalAlignment: "bottom",
+						horizontalAlignment: "center"
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			</script>
+			<div id="bar-7" style="height: 250px; width: 100%;"></div>
+		</div>
+	</div>
+</div>												

@@ -1,0 +1,93 @@
+{% assign webmonth = 'July' %}
+{% assign visitors = 320602 %}
+
+<script type="text/javascript">
+var sample_notification;
+				
+jQuery(document).ready(function($)
+{	
+						
+	if( ! $.isFunction($.fn.dxChart))
+		return;
+					
+	// Charts
+	var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
+					
+	// Pageviews Visitors Chart
+	var i = 0,
+	line_chart_data_source = [
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 4, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 6, part2: 6 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 6, part2: 5 },
+		
+							
+							
+	];
+					
+	$("#pageviews-visitors-chart").dxChart({
+		dataSource: line_chart_data_source,
+		commonSeriesSettings: {
+			argumentField: "id",
+			point: { visible: true, size: 5, hoverStyle: {size: 7, border: 0, color: 'inherit'} },
+			line: {width: 1, hoverStyle: {width: 1}}
+		},
+		series: [
+			{ valueField: "part1", name: "Pageviews", color: "#7c38bc" },
+			{ valueField: "part2", name: "Visitors", color: "#00b19d" },
+		],
+		legend: {
+			position: 'inside',
+			paddingLeftRight: 5
+		},
+		commonAxisSettings: {
+			label: {
+				visible: false
+			},
+			grid: {
+				visible: true,
+				color: '#f9f9f9'
+			}
+		},
+		valueAxis: {
+			max: 7
+		},
+		argumentAxis: {
+			valueMarginsEnabled: false
+		},
+	});					
+					
+	// Resize charts
+	$(window).on('xenon.resize', function()
+	{
+		$("#pageviews-visitors-chart").data("dxChart").render();
+	});
+					
+});
+</script>
+<div class="col-sm-12">
+	<div class="chart-item-bg">
+		<div class="chart-label">
+			<div class="h3 text-bold"  data-count="this" data-from="0.00" data-to="{{ visitors }}" data-suffix=" {{ webmonth }}" data-duration="1">0.00%</div>
+			<span class="text-medium text-muted">Unique visitors: LACity.org</span>
+		</div>
+		<div id="pageviews-visitors-chart" style="height: 220px;"></div>
+	</div>
+</div>

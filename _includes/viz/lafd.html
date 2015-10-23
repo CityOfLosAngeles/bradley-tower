@@ -1,0 +1,283 @@
+{% assign FDmonth = 'June' %}
+{% assign processing = 62 %}
+{% assign TurnoutFire = 72 %}
+{% assign TurnoutEMS = 73 %}
+{% assign TravelFire = 249 %}
+{% assign TravelEMS = 250 %}
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">LAFD Response Times: {{ FDmonth }} '15</h3>
+		<div class="panel-options">
+			<a href="#" data-toggle="panel">
+				<span class="collapse-icon">&ndash;</span>
+				<span class="expand-icon">+</span>
+			</a>
+			<a href="#" data-toggle="remove">
+				&times;
+			</a>
+		</div>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-4">
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $('#gauge-2').dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 80,
+							majorTick: {
+								color: '#1A1100',
+								tickInterval: 5
+							},
+							minorTick: {
+								color: '#1A1100',
+								visible: true,
+								tickInterval: 2
+							}
+						},
+						rangeContainer: {
+							backgroundColor: 'none'
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: 'EMD Call Processing Time',
+							font: { size: 12 }
+						},
+						subtitle: {
+							text: '{{ processing }} seconds (Over target: 60)',
+							font: {
+								size: 10,
+								color: 'grey',
+							},
+						},
+						valueIndicator: {
+							color: 'red'
+						},
+						value: {{ processing }},
+						subvalues: [60]
+					}).dxCircularGauge('instance');
+				});
+				</script>
+				<div id="gauge-2" style="height: 250px; margin: 0 30px;"></div>
+			</div>
+			<div class="col-sm-4">
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $('#gauge-3').dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 90,
+							majorTick: {
+								color: '#1A1100',
+								tickInterval: 5
+							},
+							minorTick: {
+								color: '#1A1100',
+								visible: true,
+								tickInterval: 2
+							}
+						},
+						rangeContainer: {
+							backgroundColor: 'none'
+						},
+						valueIndicator: {
+							color: 'green'
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: 'Turnout Time Non-EMS',
+							font: { size: 12 }
+						},
+						subtitle: {
+							text: '{{ TurnoutFire }} seconds (Under target: 80)',
+							font: {
+								size: 10,
+								color: 'grey',
+							},
+						},
+						value: {{ TurnoutFire }},
+						subvalues: [80]
+					}).dxCircularGauge('instance');
+				});
+				</script>
+				<div id="gauge-3" style="height: 250px; margin: 0 30px;"></div>
+			</div>
+			<div class="col-sm-4">
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $('#gauge-4').dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 90,
+							majorTick: {
+								color: '#1A1100',
+								tickInterval: 5
+							},
+							minorTick: {
+								color: '#1A1100',
+								visible: true,
+								tickInterval: 2
+							}
+						},
+						tooltip: {
+							enabled: true,
+						},
+						rangeContainer: {
+							backgroundColor: 'none'
+						},
+						title: {
+							text: 'Turnout Time (EMS)',
+							font: { size: 12 }
+						},
+						subtitle: {
+							text: '{{ TurnoutEMS }} seconds (Over target: 60)',
+							font: {
+								size: 10,
+								color: 'grey',
+							},
+						},
+						value: {{ TurnoutEMS }},
+						valueIndicator: {
+							color: 'red'
+						},
+						subvalues: [60]
+					}).dxCircularGauge('instance');
+				});
+				</script>
+				<div id="gauge-4" style="height: 250px; margin: 0 30px;"></div>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+			<div class="col-sm-6">
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $('#gauge-5').dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 300,
+							majorTick: {
+								color: '#1A1100',
+								tickInterval: 30
+							},
+							minorTick: {
+								color: '#1A1100',
+								visible: true,
+								tickInterval: 5
+							}
+						},
+						rangeContainer: {
+							backgroundColor: 'none'
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: 'Travel Time Non-EMS',
+							font: { size: 12 }
+						},
+						valueIndicator: {
+							color: 'green'
+						},
+						subtitle: {
+							text: '{{ TravelFire }} seconds (Under target: 290)',
+							font: {
+								size: 10,
+								color: 'green',
+							},
+						},
+						value: {{ TravelFire }},
+						subvalues: [290]
+					}).dxCircularGauge('instance');
+					$("#gauge-2-randomize").on('click', function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(between(0, 1000));
+					});
+					$("#gauge-2-res").on('click', function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(0);
+					});
+				});
+				</script>
+				<div id="gauge-5" style="height: 250px; margin: 0 30px;"></div>
+			</div>
+			<div class="col-sm-6">
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $('#gauge-6').dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 300,
+							majorTick: {
+								color: '#1A1100',
+								tickInterval: 30
+							},
+							minorTick: {
+								color: '#1A1100',
+								visible: true,
+								tickInterval: 5
+							}
+						},
+						rangeContainer: {
+							backgroundColor: 'none'
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: 'Travel Time EMS',
+							font: { size: 12 }
+						},
+						valueIndicator: {
+							color: 'red'
+						},
+						subtitle: {
+							text: '{{ TravelEMS }} seconds (Over target: 240)',
+							font: {
+								size: 10,
+								color: 'grey',
+							},
+						},
+						value: {{ TravelEMS }},
+						subvalues: [240]
+					}).dxCircularGauge('instance');
+					$("#gauge-2-randomize").on('click', function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(between(0, 1000));
+					});
+					$("#gauge-2-res").on('click', function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(0);
+					});
+				});
+				</script>
+				<div id="gauge-6" style="height: 250px; margin: 0 30px;"></div>
+			</div>
+		</div>
+	</div>
+</div>

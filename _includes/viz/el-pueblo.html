@@ -1,0 +1,52 @@
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-sm-12">
+							
+			<script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+
+					{year: 'FY 2013', waittime: 11296},
+					{year: 'FY 2014', waittime: 10288},
+					{year: 'FY 2015', waittime: 10873},
+
+				];
+				$("#bar-7").dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: "year"
+					},
+					series: [
+						{ valueField: "waittime", name: "Number of Tourists", color: "#7c38bc" },
+						
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: "Number of Tourists Who Took Tours at the El Pueblo Monument",
+					legend: {
+						verticalAlignment: "bottom",
+						horizontalAlignment: "center"
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			</script>
+			<div id="bar-7" style="height: 250px; width: 100%;"></div>
+		</div>
+	</div>
+</div>												

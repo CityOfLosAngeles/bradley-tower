@@ -1,0 +1,23 @@
+/**
+ *
+ * Apply your custom CSS here
+ *
+*/
+
+body {	
+}
+
+a {
+}
+
+.xe-widget.xe-progress-counter.xe-progress-counter-grey {background: #999999;}
+.xe-widget.xe-progress-counter.xe-progress-counter-grey .xe-upper {background: transparent;}
+.xe-widget.xe-counter.xe-counter-grey .xe-icon i {background: #999999; }
+.xe-lower i {font-size: 16px; margin-top: 10px; margin-right: 5px;}
+.xe-widget.xe-counter-block .xe-lower, .xe-widget.xe-progress-counter .xe-lower {text-align: right;}
+a.disabled {cursor: default; display: none;}
+a.disable i {opacity: 50%;}
+.xe-lower a i {color: white;}
+.xe-widget.xe-counter-block .xe-lower, .xe-widget.xe-progress-counter .xe-lower {padding: 5px 30px;}
+.xe-widget.xe-counter-block .xe-lower strong, .xe-widget.xe-progress-counter .xe-lower strong { line-height: 40px;}
+.xe-widget.xe-progress-counter {min-height: 150px;}

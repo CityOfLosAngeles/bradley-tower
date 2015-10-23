@@ -1,0 +1,71 @@
+<div class="panel panel-default">
+				
+	<div class="panel-body">
+		<div class="col-sm-12">
+							
+			<script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+									
+				var dataSource = [
+
+					{month: 'Jan-14', waittime: 257},
+					{month: 'Feb-14', waittime: 288},
+					{month: 'March-14', waittime: 266},
+					{month: 'April-14', waittime: 304},
+					{month: 'May-14', waittime: 289},
+					{month: 'June-14', waittime: 306},
+					{month: 'July-14', waittime: 328},
+					{month: 'Aug-14', waittime: 334},
+					{month: 'Sept-14', waittime: 389},
+					{month: 'Oct-14', waittime: 242},
+					{month: 'Nov-14', waittime: 155},
+					{month: 'Dec-14', waittime: 141},
+					{month: 'Jan-15', waittime: 127},
+					{month: 'Feb-15', waittime: 136},
+					{month: 'March-15', waittime: 135},
+					{month: 'April-15', waittime: 115},
+					{month: 'May-15', waittime: 148},
+					{month: 'June-15', waittime: 187},
+						
+					
+				];
+								
+				$("#bar-7").dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: "month"
+					},
+					series: [
+						{ valueField: "waittime", name: "Veteran Homeless LA Monthly Housed", color: "#7c38bc" },
+																												
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: "Veteran Homeless LA Monthly Housed",
+					legend: {
+						verticalAlignment: "bottom",
+						horizontalAlignment: "center"
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}	   
+					}
+				});
+			});
+			</script>
+			<div id="bar-7" style="height: 250px; width: 100%;"></div>
+	
+		</div>
+				
+	</div>

@@ -1,0 +1,121 @@
+---
+layout: post
+---
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+
+	{% include header.html %}
+	<div class="page-container">
+		<!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+			
+		<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
+		<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
+		<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
+	
+		<div class="main-content">
+			<h1 class="bg-info">{{ page.title }}</h1>
+			<script>
+			var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
+			</script>
+			<div class="row">
+			    {{ content }}
+			</div>
+			
+			
+
+
+			<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() {
+				var URL = "{{ page.gdoc }}"
+				Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true, } )
+			})
+				
+			function showInfo(data) {
+				var html = Sheetsee.ich.photogrid({'rows': data})
+				$('#photogrid').html(html)
+				var optionsJSON = ["metric"]
+				$('#photogrid a').each(function() {
+					if($(this).attr('href') === '' || $(this).text() === 'N/A') {
+						$(this).addClass("disabled");
+					}
+				});
+			}
+			</script>
+			{% raw %}
+			<script id="photogrid" type="text/html">
+				<div class="row" data-equalizer>
+			  
+					{{#rows}}
+					<div class="col-sm-3">
+			
+						<div class="xe-widget xe-progress-counter xe-progress-counter-{{color}}">
+				
+							<div class="xe-background">
+								<i class="{{icon}}"></i>
+							</div>
+				
+							<div class="xe-upper">
+								<div class="xe-icon">
+									<i class="{{icon}}"></i>
+								</div>
+								<div class="xe-label">
+									<span>{{metric}}</span>
+									<strong class="num">{{value}}</strong>
+								</div>
+							</div>
+				
+							<div class="xe-progress">
+								<span class="xe-progress-fill" data-fill-to="0" data-fill-unit="%" length data-fill-duration="3" data-fill-easing="true" style="width: {{percentage}}%;"></span>
+							</div>
+				
+							<div class="xe-lower">
+								<strong><a href="{{chartlink}}"><i class="fa-bar-chart"></i></a>			
+									<a href="{{maplink}}"><i class="fa-map-marker"></i>	</a>			
+									<a href="{{datalink}}"><i class="fa-database"></i></a>
+									<a href="{{checklink}}"><i class="fa-check-square-o"></i>	</a>			
+									{{date}} | {{comparison}}: {{change}}
+								</strong>
+					
+							</div>
+							<div class="label label-default">Goal: {{goal}}</div>
+						</div>
+					</div>     
+					{{/rows}}   
+				</div>  
+			</script>	
+  
+			{% endraw %}
+  
+			<div id="photogrid"></div>
+			
+		 <div class="row">
+			 {% contentblock bottom %}
+		 </div>
+			
+			 {% if page.map %}
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<iframe width='100%' height='300' frameborder='0' src='{{ page.map }}' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			 {% endif %}
+
+			
+			{% include footer.html %}
+	
+		</div>
+	
+	</div>
+	
+</body>
+</html>

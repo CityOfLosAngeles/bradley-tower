@@ -1,0 +1,77 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-sm-12">
+							
+			<script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+									
+				var dataSource = [
+					{month: 'July 2013', waittime: 6.08, goal: 3 },
+					{month: 'August 2013', waittime: 14.55 },
+					{month: 'September 2013', waittime: 17.34 },
+					{month: 'October 2013', waittime: 25.89 },
+					{month: 'November 2013', waittime: 31.58 },
+					{month: 'December 2013', waittime: 16.91 },
+					{month: 'January 2014', waittime: 20.09 },
+					{month: 'February 2014', waittime: 31.59 },
+					{month: 'March 2014', waittime: 33.52 },
+					{month: 'April 2014', waittime: 21.01 },
+					{month: 'May 2014', waittime: 18.31 },
+					{month: 'June 2014', waittime: 32.9 },
+					{month: 'July 2014', waittime: 40.43 },
+					{month: 'August 2014', waittime: 39.65 },
+					{month: 'September 2014', waittime: 15.66 },
+					{month: 'October 2014', waittime: 8.78, goal: 3 },
+					{month: 'November 2014', waittime: 4.23, goal: 3 },
+					{month: 'December 2014', waittime: 5.72, goal: 3 },
+					{month: 'January 2015', waittime: 3.29, goal: 3 },
+					{month: 'February 2015', waittime: 5.95, goal: 3 },
+					{month: 'March 2015', waittime: 10.1, goal: 3 },
+					{month: 'April 2015', waittime: 8.53, goal: 3 },
+					{month: 'May 2015', waittime: 9.23, goal: 3 },
+					{month: 'June 2015', waittime: 8.81, goal: 3 },
+					{month: 'July 2015', waittime: 2.73, goal: 3 },
+					
+				];
+								
+				$("#bar-12").dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: "month"
+					},
+					series: [
+						{ valueField: "waittime", name: "DWP Wait Times (Minutes)", color: "#40bbea" },
+						{ valueField: "goal", name: "Goal", color: "#990000" },
+										
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: "DWP Call Wait Time",
+					legend: {
+						verticalAlignment: "bottom",
+						horizontalAlignment: "center"
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}	   
+					}
+				});
+			});
+			</script>
+			<div id="bar-12" style="height: 300px; width: 100%;"></div>
+				
+		</div>
+
+	</div>
+</div>

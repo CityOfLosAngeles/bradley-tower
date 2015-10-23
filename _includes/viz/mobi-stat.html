@@ -1,0 +1,841 @@
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deep Dive: Finance</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="col-sm-9">
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;					
+					var dataSource = [
+						{month: 'Jan', waittime: 97, goal: 94},
+						{month: 'Feb', waittime: 51, goal: 85},
+						{month: 'Mar', waittime: 79, goal: 89},
+						{month: 'Apr', waittime: 63, goal: 69},
+						{month: 'May', waittime: 91,},
+						{month: 'Jun', waittime: 98,},
+						{month: 'Jul', waittime: 99,},
+						{month: 'Aug', waittime: 99,},
+						{month: 'Sep', waittime: 100, },
+						{month: 'Oct', waittime: 97, },
+						{month: 'Nov', waittime: 99, },
+						{month: 'Dec', waittime: 92, },
+					];
+								
+					$("#bar-3").dxChart({
+						dataSource: dataSource,
+						commonSeriesSettings: {
+							argumentField: "month"
+						},
+						series: [
+							{ valueField: "waittime", name: "2014", color: "#990000" },
+							{ valueField: "goal", name: "2015", color: "#40bbea" },
+										
+						],
+						argumentAxis:{
+							grid:{
+								visible: true
+							}
+						},
+						tooltip:{
+							enabled: true
+						},
+						title: "% of Call Center Calls Answered",
+						legend: {
+							verticalAlignment: "bottom",
+							horizontalAlignment: "center"
+						},
+						commonPaneSettings: {
+							border:{
+								visible: true,
+								right: false
+							}	   
+						}
+					});
+				});
+				</script>
+				<div id="bar-3" style="height: 300px; width: 100%;"></div>
+	
+			</div>
+						
+						
+			<div class="col-sm-3">
+				<div class="xe-widget xe-todo-list xe-todo-list-blue">
+					<div class="xe-header">
+						<div class="xe-icon">
+							<i class="fa-file-text-o"></i>
+						</div>
+						<div class="xe-label">
+							<span>Goals for Improvement</span>
+						</div>
+					</div>
+					<div class="xe-body">
+						
+						<ul class="list-unstyled">
+							<li class="done">
+								<label>
+									<div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Analyze Top Requests</span>
+								</label>
+							</li>
+							<li class="done">
+								<label>
+									<div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Mailing Notices in December</span>
+								</label>
+							</li>
+							<li class="done">
+								<label>
+									<div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Multilingual Informational Videos</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>New Telephone System</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Online Chat System</span>
+								</label>
+							</li>
+						</ul>
+						
+					</div>
+										
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+					
+<div class="row">
+	<a name="datavisitors"></a>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deep Dive: Clerk</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+			
+				
+		<div class="panel-body">
+			<div class="col-sm-9">
+							
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+									
+					var dataSource = [
+						{month: 'Jan', waittime: 874, goal: 24},
+						{month: 'Feb', waittime: 3563, goal: 112},
+						{month: 'Mar', waittime: 4936, goal: 505},
+						{month: 'Apr', waittime: 4936, goal: 669},
+						{month: 'May', waittime: 4936},
+						{month: 'Jun', waittime: 4936},
+						{month: 'Jul', waittime: 5345},
+						{month: 'Aug', waittime: 6273},
+						{month: 'Sep', waittime: 6673},
+						{month: 'Oct', waittime: 8281},
+						{month: 'Nov', waittime: 8281},
+						{month: 'Dec', waittime: 9038},
+					];
+								
+					$("#bar-4").dxChart({
+						dataSource: dataSource,
+						commonSeriesSettings: {
+							argumentField: "month"
+						},
+						series: [
+							{ valueField: "waittime", name: "2014", color: "#990000" },
+							{ valueField: "goal", name: "2015", color: "#40bbea" },
+										
+						],
+						argumentAxis:{
+							grid:{
+								visible: true
+							}
+						},
+						tooltip:{
+							enabled: true
+						},
+						title: "Cumulative # of Records Boxes Destroyed",
+						legend: {
+							verticalAlignment: "bottom",
+							horizontalAlignment: "center"
+						},
+						commonPaneSettings: {
+							border:{
+								visible: true,
+								right: false
+							}	   
+						}
+					});
+				});
+				</script>
+				<div id="bar-4" style="height: 300px; width: 100%;"></div>
+	
+			</div>
+						
+						
+			<div class="col-sm-3">
+				<div class="xe-widget xe-todo-list xe-todo-list-blue">
+					<div class="xe-header">
+						<div class="xe-icon">
+							<i class="fa-file-text-o"></i>
+						</div>
+						<div class="xe-label">
+							<span>Goals for Improvement</span>
+						</div>
+					</div>
+					<div class="xe-body">
+						
+						<ul class="list-unstyled">
+							<li class="done">
+								<label>
+									<div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>City Attorney Feedback</span>
+								</label>
+							</li>
+							<li class="done">
+								<label>
+									<div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Update Forms - Routing Slip</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Department Feedback</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Change Order of Process</span>
+								</label>
+							</li>
+						</ul>
+						
+					</div>
+										
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<a name="datavisitors"></a>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deep Dive: ITA</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+			
+				
+		<div class="panel-body">
+			<div class="col-sm-9">
+							
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+									
+					var dataSource = [
+						{month: 'Jan', waittime: 3.5, goal: 9.8},
+						{month: 'Feb', waittime: 5.5, goal: 9.5},
+						{month: 'Mar', waittime: 5.9, goal: 9.1},
+						{month: 'Apr', waittime: 5.7,},
+						{month: 'May', waittime: 5,},
+						{month: 'Jun', waittime: 6,},
+						{month: 'Jul', waittime: 6.1,},
+						{month: 'Aug', waittime: 6.4,},
+						{month: 'Sep', waittime: 6.1,},
+						{month: 'Oct', waittime: 6.6,},
+						{month: 'Nov', waittime: 7.7,},
+						{month: 'Dec', waittime: 7.8,},
+					];
+								
+					$("#bar-5").dxChart({
+						dataSource: dataSource,
+						commonSeriesSettings: {
+							argumentField: "month"
+						},
+						series: [
+							{ valueField: "waittime", name: "2014", color: "#990000" },
+							{ valueField: "goal", name: "2015", color: "#40bbea" },
+																		
+										
+						],
+						argumentAxis:{
+							grid:{
+								visible: true
+							}
+						},
+						tooltip:{
+							enabled: true
+						},
+						title: "% of Total 311 Requests Using MyLA311",
+						legend: {
+							verticalAlignment: "bottom",
+							horizontalAlignment: "center"
+						},
+						commonPaneSettings: {
+							border:{
+								visible: true,
+								right: false
+							}	   
+						}
+					});
+				});
+				</script>
+				<div id="bar-5" style="height: 300px; width: 100%;"></div>
+	
+			</div>
+						
+						
+			<div class="col-sm-3">
+				<div class="xe-widget xe-todo-list xe-todo-list-blue">
+					<div class="xe-header">
+						<div class="xe-icon">
+							<i class="fa-file-text-o"></i>
+						</div>
+						<div class="xe-label">
+							<span>Goals for Improvement</span>
+						</div>
+					</div>
+					<div class="xe-body">
+						
+						<ul class="list-unstyled">
+													
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>New Timeline for CRM to be launched</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Set target</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Promote through City events & websites</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Advertise on Channel 35</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Advertise on bus stops, community furniture</span>
+								</label>
+							</li>
+						</ul>
+						
+					</div>
+										
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<a name="datavisitors"></a>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deep Dive: ITA</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+			
+				
+		<div class="panel-body">
+			<div class="col-sm-9">
+							
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+									
+					var dataSource = [
+
+						{month: 'Jul', waittime: 5290,},
+						{month: 'Aug', waittime: 5422,},
+						{month: 'Sep', waittime: 5225,},
+						{month: 'Oct', waittime: 5229,},
+						{month: 'Nov', waittime: 4394,},
+						{month: 'Dec', waittime: 4016,},
+						{month: 'Jan', waittime: 5529,},
+						{month: 'Feb', waittime: 5396,},
+						{month: 'Mar', waittime: 7366,},
+						{month: 'Apr', waittime: 13370,},
+						{month: 'May', waittime: 10791,},
+					];
+								
+					$("#bar-14").dxChart({
+						dataSource: dataSource,
+						commonSeriesSettings: {
+							argumentField: "month"
+						},
+						series: [
+							{ valueField: "waittime", name: "Unique Monthly Visitors", color: "#40bbea" },
+																		
+										
+						],
+						argumentAxis:{
+							grid:{
+								visible: true
+							}
+						},
+						tooltip:{
+							enabled: true
+						},
+						title: "Monthly Unique Visitors to Open Data Portal",
+						legend: {
+							verticalAlignment: "bottom",
+							horizontalAlignment: "center"
+						},
+						commonPaneSettings: {
+							border:{
+								visible: true,
+								right: false
+							}	   
+						}
+					});
+				});
+				</script>
+				<div id="bar-14" style="height: 300px; width: 100%;"></div>
+	
+			</div>
+						
+						
+			<div class="col-sm-3">
+				<div class="xe-widget xe-todo-list xe-todo-list-blue">
+					<div class="xe-header">
+						<div class="xe-icon">
+							<i class="fa-file-text-o"></i>
+						</div>
+						<div class="xe-label">
+							<span>Goals for Improvement</span>
+						</div>
+					</div>
+					<div class="xe-body">
+						
+						<ul class="list-unstyled">
+													
+							<li>
+								<label class="done">
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Redesigned open data portal</span>
+								</label>
+							</li>
+							<li>
+								<label class="done">
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Developed new open data policy</span>
+								</label>
+							</li>
+							<li>
+								<label class="done">
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Created LA open data community group</span>
+								</label>
+							</li>
+							<li>
+								<label class="done">
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Created #techLA Summer Challenge</span>
+								</label>
+							</li>
+
+						</ul>
+						
+					</div>
+										
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<a name="datavisitors"></a>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deep Dive: GSD</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+			
+				
+		<div class="panel-body">
+			<div class="col-sm-9">
+							
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+									
+					var dataSource = [
+						{month: 'Jan', waittime: 15834249, goal: 19332938, newyear: 18259451  },
+						{month: 'Feb', waittime: 20037289, goal: 18356205, newyear: 13707074  },
+						{month: 'Mar', waittime: 24073071, goal: 17208405, newyear: 15343486 },
+						{month: 'Apr', waittime: 17704449, goal: 18389519},
+						{month: 'May', waittime: 19916914, goal: 20600497},
+						{month: 'Jun', waittime: 20258661, goal: 18652785},
+						{month: 'Jul', waittime: 22200706, goal: 19665223},
+						{month: 'Aug', waittime: 21308853, goal: 19940328},
+						{month: 'Sep', waittime: 21872549, goal: 17764625},
+						{month: 'Oct', waittime: 22111770, goal: 17851454},
+						{month: 'Nov', waittime: 18791497, goal: 14939413},
+						{month: 'Dec', waittime: 15954259, goal: 13544761},
+					];
+								
+					$("#bar-6").dxChart({
+						dataSource: dataSource,
+						commonSeriesSettings: {
+							argumentField: "month"
+						},
+						series: [
+							{ valueField: "waittime", name: "2013", color: "#7c38bc" },
+							{ valueField: "goal", name: "2014", color: "#990000" },
+							{ valueField: "newyear", name: "2015", color: "#40bbea" },
+										
+						],
+						argumentAxis:{
+							grid:{
+								visible: true
+							}
+						},
+						tooltip:{
+							enabled: true
+						},
+						title: "Municipal Water Use",
+						legend: {
+							verticalAlignment: "bottom",
+							horizontalAlignment: "center"
+						},
+						commonPaneSettings: {
+							border:{
+								visible: true,
+								right: false
+							}	   
+						}
+					});
+				});
+				</script>
+				<div id="bar-6" style="height: 300px; width: 100%;"></div>
+	
+			</div>
+						
+						
+			<div class="col-sm-3">
+				<div class="xe-widget xe-todo-list xe-todo-list-blue">
+					<div class="xe-header">
+						<div class="xe-icon">
+							<i class="fa-file-text-o"></i>
+						</div>
+						<div class="xe-label">
+							<span>Goals for Improvement</span>
+						</div>
+					</div>
+					<div class="xe-body">
+						
+						<ul class="list-unstyled">
+							<li class="done">
+								<label>
+									<div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Low Flow Faucets and Toilets</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Turf Removal</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Building Retrofits</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>City Hall Chiller Retrofit</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Energy and Water Building Dashboard</span>
+								</label>
+							</li>
+						</ul>
+						
+					</div>
+										
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<a name="datavisitors"></a>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deep Dive: GSD</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+			
+				
+		<div class="panel-body">
+			<div class="col-sm-12">
+							
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+									
+					var dataSource = [
+						{month: 'Jan', waittime: 13621737.7, goal: 13798043, newyear: 13581959},
+						{month: 'Feb', waittime: 12337629.9, goal: 12459485, newyear: 12553071},
+						{month: 'Mar', waittime: 14330277.1, goal: 13993169, newyear: 14393188},
+						{month: 'Apr', waittime: 13266636.7, goal: 13766616},
+						{month: 'May', waittime: 15253137.3, goal: 15202565},
+						{month: 'Jun', waittime: 15358301.6, goal: 15104612},
+						{month: 'Jul', waittime: 16530623.7, goal: 16550973},
+						{month: 'Aug', waittime: 16374439, goal: 16742803},
+						{month: 'Sep', waittime: 15860262, goal: 16309832},
+						{month: 'Oct', waittime: 15067095, goal: 15405478},
+						{month: 'Nov', waittime: 13735003, goal: 13388343},
+						{month: 'Dec', waittime: 13541228, goal: 13238702},
+					];
+								
+					$("#bar-7").dxChart({
+						dataSource: dataSource,
+						commonSeriesSettings: {
+							argumentField: "month"
+						},
+						series: [
+							{ valueField: "waittime", name: "2013", color: "#7c38bc" },
+							{ valueField: "goal", name: "2014", color: "#990000" },
+							{ valueField: "newyear", name: "2015", color: "#40bbea" },
+										
+						],
+						argumentAxis:{
+							grid:{
+								visible: true
+							}
+						},
+						tooltip:{
+							enabled: true
+						},
+						title: "Municipal Electricity Use",
+						legend: {
+							verticalAlignment: "bottom",
+							horizontalAlignment: "center"
+						},
+						commonPaneSettings: {
+							border:{
+								visible: true,
+								right: false
+							}	   
+						}
+					});
+				});
+				</script>
+				<div id="bar-7" style="height: 300px; width: 100%;"></div>
+	
+			</div>
+						
+						
+		</div>
+	</div>
+</div>
+<div class="row">
+	<a name="datavisitors"></a>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Deep Dive: Personnel</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+			
+				
+		<div class="panel-body">
+			<div class="col-sm-9">
+							
+				<script type="text/javascript">
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+									
+					var dataSource = [
+						{month: 'Jul', waittime: 342},
+						{month: 'Aug', waittime: 360},
+						{month: 'Sep', waittime: 367},
+						{month: 'Oct', waittime: 391},
+						{month: 'Nov', waittime: 410},
+						{month: 'Dec', waittime: 356},
+						{month: 'Jan', waittime: 395},
+						{month: 'Feb', waittime: 390},
+						{month: 'Mar', waittime: 377},
+					];
+								
+					$("#bar-8").dxChart({
+						dataSource: dataSource,
+						commonSeriesSettings: {
+							argumentField: "month"
+						},
+						series: [
+							{ valueField: "waittime", name: "Month", color: "#40bbea" },
+										
+						],
+						argumentAxis:{
+							grid:{
+								visible: true
+							}
+						},
+						tooltip:{
+							enabled: true
+						},
+						title: "Number of days to establish eligible list",
+						legend: {
+							verticalAlignment: "bottom",
+							horizontalAlignment: "center"
+						},
+						commonPaneSettings: {
+							border:{
+								visible: true,
+								right: false
+							}	   
+						}
+					});
+				});
+				</script>
+				<div id="bar-8" style="height: 300px; width: 100%;"></div>
+	
+			</div>
+						
+						
+			<div class="col-sm-3">
+				<div class="xe-widget xe-todo-list xe-todo-list-blue">
+					<div class="xe-header">
+						<div class="xe-icon">
+							<i class="fa-file-text-o"></i>
+						</div>
+						<div class="xe-label">
+							<span>Goals for Improvement</span>
+						</div>
+					</div>
+					<div class="xe-body">
+						
+						<ul class="list-unstyled">
+							<li class="done">
+								<label>
+									<div class="cbr-replaced cbr-checked"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Process Evaluation</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Consolidating Protest Process</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Rater Briefing Videos</span>
+								</label>
+							</li>
+							<li>
+								<label>
+									<div class="cbr-replaced"><div class="cbr-input"><input type="checkbox" class="cbr cbr-done" checked=""></div><div class="cbr-state"><span></span></div></div>
+									<span>Exam Database for Customers</span>
+								</label>
+							</li>
+
+						</ul>
+						
+					</div>
+										
+				</div>
+			</div>
+		</div>
+	</div>

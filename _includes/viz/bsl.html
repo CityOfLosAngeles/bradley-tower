@@ -1,0 +1,54 @@
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="col-sm-12">
+							
+			<script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+					{year: 'FY12', waittime: 45000, goal: 90},
+					{year: 'FY13', waittime: 45000, goal: 90},
+					{year: 'FY14', waittime: 12291, goal: 14000},
+					{year: 'FY15', waittime: 8267, goal: 7500},
+					
+
+				];
+				$("#bar-7").dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: "year"
+					},
+					series: [
+						{ valueField: "waittime", name: "Next Day Bulky-Item Pickup Rate", color: "#7c38bc" },
+						{ valueField: "goal", name: "Goal ", color: "#990000" },
+						
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: "BOS: Next Day Bulky-Item Pickup Rate (Percentage)",
+					legend: {
+						verticalAlignment: "bottom",
+						horizontalAlignment: "center"
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			</script>
+			<div id="bar-7" style="height: 250px; width: 100%;"></div>
+		</div>
+	</div>
+</div>												

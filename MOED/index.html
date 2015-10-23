@@ -7,7 +7,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>City of Los Angeles Mayoral Dashboard</title>
+    <title>MOED &#8211; City of Los Angeles Mayoral Dashboard</title>
     <meta name="description" content="The Mayor&#39;s Dashboard tracks key metrics and outcomes from the City of Los Angeles. The platform is open-source and easily reusable; contact us if your city is interested in deploying it.">
     <meta name="author" content="">
 	
@@ -145,34 +145,190 @@
 		</div>
 		
 	</nav>
-
 	<div class="page-container">
+		<!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+			
+		<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
+		<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
+		<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
 	
 		<div class="main-content">
-			
-			<div class="row">
-				<div class="col-sm-12"> <div class="panel panel-default"> 
-					<div class="panel-heading">Mayor's Dashboard: City of Los Angeles</div> 
-					<div class="panel-body"> 
-						<div class="row"> 
-							<div class="col-md-12"> <div class="alert alert-success"> 
-								<strong>The Mayor's Dashboard </strong> tracks key metrics and outcomes from the City of Los Angeles. The platform is <a href="https://github.com/datala/bradley-tower">open-source and easily reusable</a>; <a href="https://docs.google.com/forms/d/1HHl99mPndrlveTCMcT2XuE-pyl1bsifjwppANvJJ8tY/viewform">contact us</a> if your city is interested in deploying it.<br><br>
-									Explore the LA's key performance metrics:
-								<ul>
-									<li><a href="../MOCS">City Services</a></li>
-									<li><a href="../MOPS">Public Safety</a></li>
-									<li><a href="../MOED">Economic Development</a></li>
-									<li><a href="../MOBI">Budget and Innovation</a></li>
-								</ul>
-							</div> 
-						</div> 
-					</div> 
-				</div> 
-			</div>
-			
+			<h1 class="bg-info">MOED</h1>
 			<script>
 			var xenonPalette = ['#68b828','#7c38bc','#0e62c7','#fcd036','#4fcdfc','#00b19d','#ff6264','#f7aa47'];
 			</script>
+			<div class="row">
+			    
+<div class="col-sm-6">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Job Growth: Overall Employment</h3>
+			<div class="panel-options">
+				<a href="#" data-toggle="panel">
+					<span class="collapse-icon">&ndash;</span>
+					<span class="expand-icon">+</span>
+				</a>
+				<a href="#" data-toggle="remove">
+					&times;
+				</a>
+			</div>
+		</div>
+		<div class="panel-body">	
+			<script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+										
+								
+				var dataSource = {
+					store: new DevExpress.data.CustomStore({
+						load: function() {
+							return $.getJSON("https://performance.lacity.org/resource/ksyv-cia6.json?$order=date%20ASC&$offset=100");
+						}
+					})
+				}
+							
+				$("#bar-3").dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: "month_year"
+					},
+					series: [
+						{ valueField: "ca_edd_employment_estimate", name: "CA EDD Estimates", color: "#fcd036" },
+						{ valueField: "household_employment", name: "UCLA Anderson Forecast", color: "#990000" },
+												
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						},
+						valuetype: 'string',
+												
+					},
+					valueAxis: { valueType: 'numeric',
+				},
+				tooltip:{
+					enabled: true
+				},
+				tooltip:{
+					enabled: true
+				},
+				title: "",
+				legend: {
+					verticalAlignment: "bottom",
+					horizontalAlignment: "center"
+				},
+				commonPaneSettings: {
+					border:{
+						visible: true,
+						right: false
+					}	   
+				}
+			});
+		});
+		</script>
+		<div id="bar-3" style="height: 300px; width: 100%;"></div>
+	</div>
+</div>
+						
+</div>
+					<div class="col-sm-6">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Building Permits</h3>
+								<div class="panel-options">
+									<a href="#" data-toggle="panel">
+										<span class="collapse-icon">&ndash;</span>
+										<span class="expand-icon">+</span>
+									</a>
+									<a href="#" data-toggle="remove">
+										&times;
+									</a>
+								</div>
+							</div>
+							<div class="panel-body">	
+								<iframe width='100%' height='300' frameborder='0' src='https://abhinemani.cartodb.com/viz/809222ea-c822-11e4-9df5-0e9d821ea90d/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>				
+							</div>
+						</div>
+					
+
+					</div>
+			</div>
+			
+			
+
+
+			<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() {
+				var URL = "1NEhvrFwqwgSUrkHmUfPzsHeLA0PMDLcGGhdoZ1sBtbY"
+				Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true, } )
+			})
+				
+			function showInfo(data) {
+				var html = Sheetsee.ich.photogrid({'rows': data})
+				$('#photogrid').html(html)
+				var optionsJSON = ["metric"]
+				$('#photogrid a').each(function() {
+					if($(this).attr('href') === '' || $(this).text() === 'N/A') {
+						$(this).addClass("disabled");
+					}
+				});
+			}
+			</script>
+			
+			<script id="photogrid" type="text/html">
+				<div class="row" data-equalizer>
+			  
+					{{#rows}}
+					<div class="col-sm-3">
+			
+						<div class="xe-widget xe-progress-counter xe-progress-counter-{{color}}">
+				
+							<div class="xe-background">
+								<i class="{{icon}}"></i>
+							</div>
+				
+							<div class="xe-upper">
+								<div class="xe-icon">
+									<i class="{{icon}}"></i>
+								</div>
+								<div class="xe-label">
+									<span>{{metric}}</span>
+									<strong class="num">{{value}}</strong>
+								</div>
+							</div>
+				
+							<div class="xe-progress">
+								<span class="xe-progress-fill" data-fill-to="0" data-fill-unit="%" length data-fill-duration="3" data-fill-easing="true" style="width: {{percentage}}%;"></span>
+							</div>
+				
+							<div class="xe-lower">
+								<strong><a href="{{chartlink}}"><i class="fa-bar-chart"></i></a>			
+									<a href="{{maplink}}"><i class="fa-map-marker"></i>	</a>			
+									<a href="{{datalink}}"><i class="fa-database"></i></a>
+									<a href="{{checklink}}"><i class="fa-check-square-o"></i>	</a>			
+									{{date}} | {{comparison}}: {{change}}
+								</strong>
+					
+							</div>
+							<div class="label label-default">Goal: {{goal}}</div>
+						</div>
+					</div>     
+					{{/rows}}   
+				</div>  
+			</script>	
+  
+			
+  
+			<div id="photogrid"></div>
+			
+		 <div class="row">
+			 
+		 </div>
+			
+			 
+
 			
 			
 <footer class="main-footer sticky footer-type-1">
@@ -234,11 +390,10 @@ ga('create', 'UA-55976849-3', 'auto');
 ga('send', 'pageview');
 
 </script>
-
+	
 		</div>
-
+	
 	</div>
-
+	
 </body>
-
 </html>

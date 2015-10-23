@@ -1,30 +1,1136 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>City of Los Angeles Mayoral Dashboard</title>
+    <description>The Mayor&#39;s Dashboard tracks key metrics and outcomes from the City of Los Angeles. The platform is open-source and easily reusable; contact us if your city is interested in deploying it.</description>
+    <link>http://datala.github.io/bradley-tower//bradley-tower/</link>
+    <atom:link href="http://datala.github.io/bradley-tower//bradley-tower/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 23 Oct 2015 17:23:13 -0500</pubDate>
+    <lastBuildDate>Fri, 23 Oct 2015 17:23:13 -0500</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Poverty</title>
+        <description>&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;col-sm-12&quot;&gt;
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				
+  			   
+				
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				
+				
+
+				var dataSource = [
+					{month: &#39;Jan-12&#39;, waittime: 12.58, goal: 13.1},
+					{month: &#39;Feb-12&#39;, waittime: 12.22, goal: 12.8},
+					{month: &#39;March-12&#39;, waittime: 11.82, goal: 12.4},
+					{month: &#39;April-12&#39;, waittime: 11.23, goal: 11.6},
+					{month: &#39;May-12&#39;, waittime: 11.36, goal: 11.9},
+					{month: &#39;June-12&#39;, waittime: 11.73, goal: 12.3},
+					{month: &#39;July-12&#39;, waittime: 12.43, goal: 13.1},
+					{month: &#39;Aug-12&#39;, waittime: 11.8, goal: 12.4},
+					{month: &#39;Sept-12&#39;, waittime: 11, goal: 11.4},
+					{month: &#39;Oct-12&#39;, waittime: 11, goal: 11.5},
+					{month: &#39;Nov-12&#39;, waittime: 10.61, goal: 11},
+					{month: &#39;Dec-12&#39;, waittime: 10.74, goal: 11.2},
+					{month: &#39;Jan-13&#39;, waittime: 11.45, goal: 12.1},
+					{month: &#39;Feb-13&#39;, waittime: 10.74, goal: 11.3},
+					{month: &#39;March-13&#39;, waittime: 10.33, goal: 11},
+					{month: &#39;April-13&#39;, waittime: 10, goal: 10.4},
+					{month: &#39;May-13&#39;, waittime: 10.12, goal: 10.7},
+					{month: &#39;June-13&#39;, waittime: 10.75, goal: 11.4},
+					{month: &#39;July-13&#39;, waittime: 11.07, goal: 11.8},
+					{month: &#39;Aug-13&#39;, waittime: 10.5, goal: 11.2},
+					{month: &#39;Sept-13&#39;, waittime: 9.97, goal: 10.6},
+					{month: &#39;Oct-13&#39;, waittime: 9.87, goal: 10.6},
+					{month: &#39;Nov-13&#39;, waittime: 9.37, goal: 10.1},
+					{month: &#39;Dec-13&#39;, waittime: 9.03, goal: 9.7},
+					{month: &#39;Jan-14&#39;, waittime: 9.43, goal: 9.9},
+					{month: &#39;Feb-14&#39;, waittime: 9.17, goal: 9.8},
+					{month: &#39;March-14&#39;, waittime: 9, goal: 9.7},
+					{month: &#39;April-14&#39;, waittime: 8.24, goal: 8.4},
+					{month: &#39;May-14&#39;, waittime: 8.45, goal: 8.8},
+					{month: &#39;June-14&#39;, waittime: 8.71, goal: 9.1},
+					{month: &#39;July-14&#39;, waittime: 9.44, goal: 9.6},
+					{month: &#39;Aug-14&#39;, waittime: 9.1, goal: 9.4},
+					{month: &#39;Sept-14&#39;, waittime: 8.54, goal: 8.6},
+					{month: &#39;Oct-14&#39;, waittime: 8.46, goal: 8.7},
+					{month: &#39;Nov-14&#39;, waittime: 8.38, goal: 8.8},
+					{month: &#39;Dec-14&#39;, waittime: 8.01, goal: 8},
+					{month: &#39;Jan-15&#39;, waittime: 8.66, goal: 8.6},
+					{month: &#39;Feb-15&#39;, waittime: 8.18, goal: 8.1},
+					{month: &#39;March-15&#39;, waittime: 7.73, goal: 7.7},
+				];
+
+				$(&quot;#bar-7&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month&quot;
+					},
+					series: [
+						{ valueField: &quot;waittime&quot;, name: &quot;UCLA Forecast Estimate&quot;, color: &quot;#7c38bc&quot; },
+
+						{ valueField: &quot;goal&quot;, name: &quot;CA EDD Estimate&quot;, color: &quot;#990000&quot; },
+
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: &quot;Unemployment Rate Estimates&quot;,
+					legend: {
+						verticalAlignment: &quot;bottom&quot;,
+						horizontalAlignment: &quot;center&quot;
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-7&quot; style=&quot;height: 250px; width: 100%;&quot;&gt;&lt;/div&gt;
+
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/poverty</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/poverty</guid>
+        
+        
+        <category>focus</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>MOPS</title>
+        <description>
+
+
+
+
+
+
+
+&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-heading&quot;&gt;
+		&lt;h3 class=&quot;panel-title&quot;&gt;LAFD Response Times: June &#39;15&lt;/h3&gt;
+		&lt;div class=&quot;panel-options&quot;&gt;
+			&lt;a href=&quot;#&quot; data-toggle=&quot;panel&quot;&gt;
+				&lt;span class=&quot;collapse-icon&quot;&gt;&amp;ndash;&lt;/span&gt;
+				&lt;span class=&quot;expand-icon&quot;&gt;+&lt;/span&gt;
+			&lt;/a&gt;
+			&lt;a href=&quot;#&quot; data-toggle=&quot;remove&quot;&gt;
+				&amp;times;
+			&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;div class=&quot;col-sm-4&quot;&gt;
+				&lt;script type=&quot;text/javascript&quot;&gt;
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $(&#39;#gauge-2&#39;).dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 80,
+							majorTick: {
+								color: &#39;#1A1100&#39;,
+								tickInterval: 5
+							},
+							minorTick: {
+								color: &#39;#1A1100&#39;,
+								visible: true,
+								tickInterval: 2
+							}
+						},
+						rangeContainer: {
+							backgroundColor: &#39;none&#39;
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: &#39;EMD Call Processing Time&#39;,
+							font: { size: 12 }
+						},
+						subtitle: {
+							text: &#39;62 seconds (Over target: 60)&#39;,
+							font: {
+								size: 10,
+								color: &#39;grey&#39;,
+							},
+						},
+						valueIndicator: {
+							color: &#39;red&#39;
+						},
+						value: 62,
+						subvalues: [60]
+					}).dxCircularGauge(&#39;instance&#39;);
+				});
+				&lt;/script&gt;
+				&lt;div id=&quot;gauge-2&quot; style=&quot;height: 250px; margin: 0 30px;&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;col-sm-4&quot;&gt;
+				&lt;script type=&quot;text/javascript&quot;&gt;
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $(&#39;#gauge-3&#39;).dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 90,
+							majorTick: {
+								color: &#39;#1A1100&#39;,
+								tickInterval: 5
+							},
+							minorTick: {
+								color: &#39;#1A1100&#39;,
+								visible: true,
+								tickInterval: 2
+							}
+						},
+						rangeContainer: {
+							backgroundColor: &#39;none&#39;
+						},
+						valueIndicator: {
+							color: &#39;green&#39;
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: &#39;Turnout Time Non-EMS&#39;,
+							font: { size: 12 }
+						},
+						subtitle: {
+							text: &#39;72 seconds (Under target: 80)&#39;,
+							font: {
+								size: 10,
+								color: &#39;grey&#39;,
+							},
+						},
+						value: 72,
+						subvalues: [80]
+					}).dxCircularGauge(&#39;instance&#39;);
+				});
+				&lt;/script&gt;
+				&lt;div id=&quot;gauge-3&quot; style=&quot;height: 250px; margin: 0 30px;&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;col-sm-4&quot;&gt;
+				&lt;script type=&quot;text/javascript&quot;&gt;
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $(&#39;#gauge-4&#39;).dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 90,
+							majorTick: {
+								color: &#39;#1A1100&#39;,
+								tickInterval: 5
+							},
+							minorTick: {
+								color: &#39;#1A1100&#39;,
+								visible: true,
+								tickInterval: 2
+							}
+						},
+						tooltip: {
+							enabled: true,
+						},
+						rangeContainer: {
+							backgroundColor: &#39;none&#39;
+						},
+						title: {
+							text: &#39;Turnout Time (EMS)&#39;,
+							font: { size: 12 }
+						},
+						subtitle: {
+							text: &#39;73 seconds (Over target: 60)&#39;,
+							font: {
+								size: 10,
+								color: &#39;grey&#39;,
+							},
+						},
+						value: 73,
+						valueIndicator: {
+							color: &#39;red&#39;
+						},
+						subvalues: [60]
+					}).dxCircularGauge(&#39;instance&#39;);
+				});
+				&lt;/script&gt;
+				&lt;div id=&quot;gauge-4&quot; style=&quot;height: 250px; margin: 0 30px;&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;row&quot; style=&quot;margin-top: 10px;&quot;&gt;
+			&lt;div class=&quot;col-sm-6&quot;&gt;
+				&lt;script type=&quot;text/javascript&quot;&gt;
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $(&#39;#gauge-5&#39;).dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 300,
+							majorTick: {
+								color: &#39;#1A1100&#39;,
+								tickInterval: 30
+							},
+							minorTick: {
+								color: &#39;#1A1100&#39;,
+								visible: true,
+								tickInterval: 5
+							}
+						},
+						rangeContainer: {
+							backgroundColor: &#39;none&#39;
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: &#39;Travel Time Non-EMS&#39;,
+							font: { size: 12 }
+						},
+						valueIndicator: {
+							color: &#39;green&#39;
+						},
+						subtitle: {
+							text: &#39;249 seconds (Under target: 290)&#39;,
+							font: {
+								size: 10,
+								color: &#39;green&#39;,
+							},
+						},
+						value: 249,
+						subvalues: [290]
+					}).dxCircularGauge(&#39;instance&#39;);
+					$(&quot;#gauge-2-randomize&quot;).on(&#39;click&#39;, function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(between(0, 1000));
+					});
+					$(&quot;#gauge-2-res&quot;).on(&#39;click&#39;, function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(0);
+					});
+				});
+				&lt;/script&gt;
+				&lt;div id=&quot;gauge-5&quot; style=&quot;height: 250px; margin: 0 30px;&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;col-sm-6&quot;&gt;
+				&lt;script type=&quot;text/javascript&quot;&gt;
+				jQuery(document).ready(function($)
+				{
+					if( ! $.isFunction($.fn.dxChart))
+						return;
+					var gauge = $(&#39;#gauge-6&#39;).dxCircularGauge({
+						scale: {
+							startValue: 0,
+							endValue: 300,
+							majorTick: {
+								color: &#39;#1A1100&#39;,
+								tickInterval: 30
+							},
+							minorTick: {
+								color: &#39;#1A1100&#39;,
+								visible: true,
+								tickInterval: 5
+							}
+						},
+						rangeContainer: {
+							backgroundColor: &#39;none&#39;
+						},
+						tooltip: {
+							enabled: true,
+						},
+						title: {
+							text: &#39;Travel Time EMS&#39;,
+							font: { size: 12 }
+						},
+						valueIndicator: {
+							color: &#39;red&#39;
+						},
+						subtitle: {
+							text: &#39;250 seconds (Over target: 240)&#39;,
+							font: {
+								size: 10,
+								color: &#39;grey&#39;,
+							},
+						},
+						value: 250,
+						subvalues: [240]
+					}).dxCircularGauge(&#39;instance&#39;);
+					$(&quot;#gauge-2-randomize&quot;).on(&#39;click&#39;, function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(between(0, 1000));
+					});
+					$(&quot;#gauge-2-res&quot;).on(&#39;click&#39;, function(ev)
+					{
+						ev.preventDefault();
+						gauge.value(0);
+					});
+				});
+				&lt;/script&gt;
+				&lt;div id=&quot;gauge-6&quot; style=&quot;height: 250px; margin: 0 30px;&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/MOPS</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/MOPS</guid>
+        
+        
+        <category>mayor</category>
+        
+      </item>
+    
+      <item>
+        <title>MOED</title>
+        <description>
+&lt;div class=&quot;col-sm-6&quot;&gt;
+	&lt;div class=&quot;panel panel-default&quot;&gt;
+		&lt;div class=&quot;panel-heading&quot;&gt;
+			&lt;h3 class=&quot;panel-title&quot;&gt;Job Growth: Overall Employment&lt;/h3&gt;
+			&lt;div class=&quot;panel-options&quot;&gt;
+				&lt;a href=&quot;#&quot; data-toggle=&quot;panel&quot;&gt;
+					&lt;span class=&quot;collapse-icon&quot;&gt;&amp;ndash;&lt;/span&gt;
+					&lt;span class=&quot;expand-icon&quot;&gt;+&lt;/span&gt;
+				&lt;/a&gt;
+				&lt;a href=&quot;#&quot; data-toggle=&quot;remove&quot;&gt;
+					&amp;times;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;panel-body&quot;&gt;	
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+										
+								
+				var dataSource = {
+					store: new DevExpress.data.CustomStore({
+						load: function() {
+							return $.getJSON(&quot;https://performance.lacity.org/resource/ksyv-cia6.json?$order=date%20ASC&amp;$offset=100&quot;);
+						}
+					})
+				}
+							
+				$(&quot;#bar-3&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month_year&quot;
+					},
+					series: [
+						{ valueField: &quot;ca_edd_employment_estimate&quot;, name: &quot;CA EDD Estimates&quot;, color: &quot;#fcd036&quot; },
+						{ valueField: &quot;household_employment&quot;, name: &quot;UCLA Anderson Forecast&quot;, color: &quot;#990000&quot; },
+												
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						},
+						valuetype: &#39;string&#39;,
+												
+					},
+					valueAxis: { valueType: &#39;numeric&#39;,
+				},
+				tooltip:{
+					enabled: true
+				},
+				tooltip:{
+					enabled: true
+				},
+				title: &quot;&quot;,
+				legend: {
+					verticalAlignment: &quot;bottom&quot;,
+					horizontalAlignment: &quot;center&quot;
+				},
+				commonPaneSettings: {
+					border:{
+						visible: true,
+						right: false
+					}	   
+				}
+			});
+		});
+		&lt;/script&gt;
+		&lt;div id=&quot;bar-3&quot; style=&quot;height: 300px; width: 100%;&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+						
+&lt;/div&gt;
+					&lt;div class=&quot;col-sm-6&quot;&gt;
+						&lt;div class=&quot;panel panel-default&quot;&gt;
+							&lt;div class=&quot;panel-heading&quot;&gt;
+								&lt;h3 class=&quot;panel-title&quot;&gt;Building Permits&lt;/h3&gt;
+								&lt;div class=&quot;panel-options&quot;&gt;
+									&lt;a href=&quot;#&quot; data-toggle=&quot;panel&quot;&gt;
+										&lt;span class=&quot;collapse-icon&quot;&gt;&amp;ndash;&lt;/span&gt;
+										&lt;span class=&quot;expand-icon&quot;&gt;+&lt;/span&gt;
+									&lt;/a&gt;
+									&lt;a href=&quot;#&quot; data-toggle=&quot;remove&quot;&gt;
+										&amp;times;
+									&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+							&lt;div class=&quot;panel-body&quot;&gt;	
+								&lt;iframe width=&#39;100%&#39; height=&#39;300&#39; frameborder=&#39;0&#39; src=&#39;https://abhinemani.cartodb.com/viz/809222ea-c822-11e4-9df5-0e9d821ea90d/embed_map&#39; allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;				
+							&lt;/div&gt;
+						&lt;/div&gt;
+					
+
+					&lt;/div&gt;</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/MOED</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/MOED</guid>
+        
+        
+        <category>mayor</category>
+        
+      </item>
+    
+      <item>
+        <title>MOCS</title>
+        <description>&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;col-sm-6&quot;&gt;
+							
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+									
+				var dataSource = [
+					{month: &#39;July 2013&#39;, waittime: 6.08, goal: 3 },
+					{month: &#39;August 2013&#39;, waittime: 14.55 },
+					{month: &#39;September 2013&#39;, waittime: 17.34 },
+					{month: &#39;October 2013&#39;, waittime: 25.89 },
+					{month: &#39;November 2013&#39;, waittime: 31.58 },
+					{month: &#39;December 2013&#39;, waittime: 16.91 },
+					{month: &#39;January 2014&#39;, waittime: 20.09 },
+					{month: &#39;February 2014&#39;, waittime: 31.59 },
+					{month: &#39;March 2014&#39;, waittime: 33.52 },
+					{month: &#39;April 2014&#39;, waittime: 21.01 },
+					{month: &#39;May 2014&#39;, waittime: 18.31 },
+					{month: &#39;June 2014&#39;, waittime: 32.9 },
+					{month: &#39;July 2014&#39;, waittime: 40.43 },
+					{month: &#39;August 2014&#39;, waittime: 39.65 },
+					{month: &#39;September 2014&#39;, waittime: 15.66 },
+					{month: &#39;October 2014&#39;, waittime: 8.78, goal: 3 },
+					{month: &#39;November 2014&#39;, waittime: 4.23, goal: 3 },
+					{month: &#39;December 2014&#39;, waittime: 5.72, goal: 3 },
+					{month: &#39;January 2015&#39;, waittime: 3.29, goal: 3 },
+					{month: &#39;February 2015&#39;, waittime: 5.95, goal: 3 },
+					{month: &#39;March 2015&#39;, waittime: 10.1, goal: 3 },
+					{month: &#39;April 2015&#39;, waittime: 8.53, goal: 3 },
+					{month: &#39;May 2015&#39;, waittime: 9.23, goal: 3 },
+					{month: &#39;June 2015&#39;, waittime: 8.81, goal: 3 },
+					{month: &#39;July 2015&#39;, waittime: 2.73, goal: 3 },
+					
+				];
+								
+				$(&quot;#bar-12&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month&quot;
+					},
+					series: [
+						{ valueField: &quot;waittime&quot;, name: &quot;DWP Wait Times (Minutes)&quot;, color: &quot;#40bbea&quot; },
+						{ valueField: &quot;goal&quot;, name: &quot;Goal&quot;, color: &quot;#990000&quot; },
+										
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: &quot;DWP Call Wait Time&quot;,
+					legend: {
+						verticalAlignment: &quot;bottom&quot;,
+						horizontalAlignment: &quot;center&quot;
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}	   
+					}
+				});
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-12&quot; style=&quot;height: 300px; width: 100%;&quot;&gt;&lt;/div&gt;
+					
+					
+		&lt;/div&gt;
+		&lt;div class=&quot;col-sm-6&quot;&gt;
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+							
+				var dataSource = [
+					{region: &quot;New Starts Grants: Purple Line Phase 1&quot;, val: 1250000000},
+					{region: &quot;New Starts Grants: Regional Connector&quot;, val: 670000000},
+					{region: &quot;TIFIA: Purple Line Phase 1&quot;, val: 856000000},
+					{region: &quot;TIFIA: Regional Connector&quot;, val: 160000000}
+				], timer;
+						
+				$(&quot;#bar-8&quot;).dxPieChart({
+					dataSource: dataSource,
+					title: &quot;MTA Money Raised ($3B)&quot;,
+					tooltip: {
+						enabled: true,
+						format:&quot;millions&quot;,
+						customizeText: function() { 
+							return this.argumentText + &quot;&lt;br/&gt;&quot; + this.valueText;
+						}
+					},
+					size: {
+						height: 280
+					},
+					pointClick: function(point) {
+						point.showTooltip();
+						clearTimeout(timer);
+						timer = setTimeout(function() { point.hideTooltip(); }, 2000);
+						$(&quot;select option:contains(&quot; + point.argument + &quot;)&quot;).prop(&quot;selected&quot;, true);
+					},
+					legend: {
+						visible: true,
+
+					},  
+					series: [{
+						type: &quot;doughnut&quot;,
+						argumentField: &quot;region&quot;
+					}],
+					palette: xenonPalette
+							
+				});
+						
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-8&quot; style=&quot;height: 300px; width: 100%;&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+
+	&lt;/div&gt;</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/MOCS</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/MOCS</guid>
+        
+        
+        <category>mayor</category>
+        
+      </item>
+    
+      <item>
+        <title>MOBI</title>
+        <description>
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var sample_notification;
+				
+jQuery(document).ready(function($)
+{	
+						
+	if( ! $.isFunction($.fn.dxChart))
+		return;
+					
+	// Charts
+	var xenonPalette = [&#39;#68b828&#39;,&#39;#7c38bc&#39;,&#39;#0e62c7&#39;,&#39;#fcd036&#39;,&#39;#4fcdfc&#39;,&#39;#00b19d&#39;,&#39;#ff6264&#39;,&#39;#f7aa47&#39;];
+					
+	// Pageviews Visitors Chart
+	var i = 0,
+	line_chart_data_source = [
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 3 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 4, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 6, part2: 6 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 4, part2: 4 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 5, part2: 5 },
+		{ id: ++i, part1: 6, part2: 5 },
+		
+							
+							
+	];
+					
+	$(&quot;#pageviews-visitors-chart&quot;).dxChart({
+		dataSource: line_chart_data_source,
+		commonSeriesSettings: {
+			argumentField: &quot;id&quot;,
+			point: { visible: true, size: 5, hoverStyle: {size: 7, border: 0, color: &#39;inherit&#39;} },
+			line: {width: 1, hoverStyle: {width: 1}}
+		},
+		series: [
+			{ valueField: &quot;part1&quot;, name: &quot;Pageviews&quot;, color: &quot;#7c38bc&quot; },
+			{ valueField: &quot;part2&quot;, name: &quot;Visitors&quot;, color: &quot;#00b19d&quot; },
+		],
+		legend: {
+			position: &#39;inside&#39;,
+			paddingLeftRight: 5
+		},
+		commonAxisSettings: {
+			label: {
+				visible: false
+			},
+			grid: {
+				visible: true,
+				color: &#39;#f9f9f9&#39;
+			}
+		},
+		valueAxis: {
+			max: 7
+		},
+		argumentAxis: {
+			valueMarginsEnabled: false
+		},
+	});					
+					
+	// Resize charts
+	$(window).on(&#39;xenon.resize&#39;, function()
+	{
+		$(&quot;#pageviews-visitors-chart&quot;).data(&quot;dxChart&quot;).render();
+	});
+					
+});
+&lt;/script&gt;
+&lt;div class=&quot;col-sm-12&quot;&gt;
+	&lt;div class=&quot;chart-item-bg&quot;&gt;
+		&lt;div class=&quot;chart-label&quot;&gt;
+			&lt;div class=&quot;h3 text-bold&quot;  data-count=&quot;this&quot; data-from=&quot;0.00&quot; data-to=&quot;320602&quot; data-suffix=&quot; July&quot; data-duration=&quot;1&quot;&gt;0.00%&lt;/div&gt;
+			&lt;span class=&quot;text-medium text-muted&quot;&gt;Unique visitors: LACity.org&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div id=&quot;pageviews-visitors-chart&quot; style=&quot;height: 220px;&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/MOBI</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/MOBI</guid>
+        
+        
+        <category>mayor</category>
+        
+      </item>
+    
+      <item>
+        <title>Homelessness</title>
+        <description>&lt;div class=&quot;panel panel-default&quot;&gt;
+				
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;col-sm-12&quot;&gt;
+							
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+									
+				var dataSource = [
+
+					{month: &#39;Jan-14&#39;, waittime: 257},
+					{month: &#39;Feb-14&#39;, waittime: 288},
+					{month: &#39;March-14&#39;, waittime: 266},
+					{month: &#39;April-14&#39;, waittime: 304},
+					{month: &#39;May-14&#39;, waittime: 289},
+					{month: &#39;June-14&#39;, waittime: 306},
+					{month: &#39;July-14&#39;, waittime: 328},
+					{month: &#39;Aug-14&#39;, waittime: 334},
+					{month: &#39;Sept-14&#39;, waittime: 389},
+					{month: &#39;Oct-14&#39;, waittime: 242},
+					{month: &#39;Nov-14&#39;, waittime: 155},
+					{month: &#39;Dec-14&#39;, waittime: 141},
+					{month: &#39;Jan-15&#39;, waittime: 127},
+					{month: &#39;Feb-15&#39;, waittime: 136},
+					{month: &#39;March-15&#39;, waittime: 135},
+					{month: &#39;April-15&#39;, waittime: 115},
+					{month: &#39;May-15&#39;, waittime: 148},
+					{month: &#39;June-15&#39;, waittime: 187},
+						
+					
+				];
+								
+				$(&quot;#bar-7&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month&quot;
+					},
+					series: [
+						{ valueField: &quot;waittime&quot;, name: &quot;Veteran Homeless LA Monthly Housed&quot;, color: &quot;#7c38bc&quot; },
+																												
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: &quot;Veteran Homeless LA Monthly Housed&quot;,
+					legend: {
+						verticalAlignment: &quot;bottom&quot;,
+						horizontalAlignment: &quot;center&quot;
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}	   
+					}
+				});
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-7&quot; style=&quot;height: 250px; width: 100%;&quot;&gt;&lt;/div&gt;
+	
+		&lt;/div&gt;
+				
+	&lt;/div&gt;</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/homelessness</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/homelessness</guid>
+        
+        
+        <category>focus</category>
+        
+      </item>
+    
+      <item>
+        <title>Drought</title>
+        <description>
+&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;col-sm-12&quot;&gt;
+							
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+					{month: &#39;June&#39;, waittime: 51320.9},
+					{month: &#39;July&#39;, waittime: 263203.36},
+					{month: &#39;August&#39;, waittime: 96585},
+					{month: &#39;September&#39;, waittime: 402304.5},
+					{month: &#39;October&#39;, waittime: 361487.45},
+					{month: &#39;November&#39;, waittime: 126889.7},
+					{month: &#39;December&#39;, waittime: 293050.25},
+					{month: &#39;January&#39;, waittime: 585796},
+					{month: &#39;February&#39;, waittime: 1513650.78},
+					{month: &#39;March&#39;, waittime: 1114476},
+					{month: &#39;April&#39;, waittime: 1268884},
+				];
+				$(&quot;#bar-7&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month&quot;
+					},
+					series: [
+						{ valueField: &quot;waittime&quot;, name: &quot;Sq. Ft. of Turf Replaced &quot;, color: &quot;#7c38bc&quot; },
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: &quot;Sq. Ft. of Turf Replaced &quot;,
+					legend: {
+						verticalAlignment: &quot;bottom&quot;,
+						horizontalAlignment: &quot;center&quot;
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-7&quot; style=&quot;height: 250px; width: 100%;&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;	
+&lt;/div&gt;												
+&lt;div class=&quot;row&quot;&gt;
+&lt;a name=&quot;datavisitors&quot;&gt;&lt;/a&gt;
+&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;col-sm-12&quot;&gt;
+							
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+					{month: &#39;June&#39;, waittime: 99359.8},
+					{month: &#39;July&#39;, waittime: 489518.32},
+					{month: &#39;August&#39;, waittime: 189535},
+					{month: &#39;September&#39;, waittime: 918331.1},
+					{month: &#39;October&#39;, waittime: 877858.66},
+					{month: &#39;November&#39;, waittime: 330033.1},
+					{month: &#39;December&#39;, waittime: 833731.75},
+					{month: &#39;January&#39;, waittime: 1634509},
+					{month: &#39;February&#39;, waittime: 4510961.61},
+					{month: &#39;March&#39;, waittime: 3580279},
+					{month: &#39;April&#39;, waittime: 4121885},
+				];
+				$(&quot;#bar-8&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month&quot;
+					},
+					series: [
+						{ valueField: &quot;waittime&quot;, name: &quot;Incentives Paid for Turf Removal&quot;, color: &quot;#7c38bc&quot; },
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: &quot;Incentives Paid for Turf Removal&quot;,
+					legend: {
+						verticalAlignment: &quot;bottom&quot;,
+						horizontalAlignment: &quot;center&quot;
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-8&quot; style=&quot;height: 250px; width: 100%;&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/drought</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/drought</guid>
+        
+        
+        <category>focus</category>
+        
+      </item>
+    
+      <item>
+        <title>City Government Water and Power</title>
+        <description></description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/govt-water-power</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/govt-water-power</guid>
+        
+        
+        <category>focus</category>
+        
+      </item>
+    
+      <item>
+        <title>100k Housing Units</title>
+        <description>
+&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;col-sm-12&quot;&gt;
+							
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+{month: &#39;Q1 FY11;&#39;, waittime: 1331},
+{month: &#39;Q2 FY11;&#39;, waittime: 1172},
+{month: &#39;Q3 FY11;&#39;, waittime: 1114},
+{month: &#39;Q4 FY11;&#39;, waittime: 1936},
+{month: &#39;Q1 FY12;&#39;, waittime: 1471},
+{month: &#39;Q2 FY12;&#39;, waittime: 2148},
+{month: &#39;Q3 FY12;&#39;, waittime: 2693},
+{month: &#39;Q4 FY12;&#39;, waittime: 1636},
+{month: &#39;Q1 FY13;&#39;, waittime: 1624},
+{month: &#39;Q2 FY13;&#39;, waittime: 1732},
+{month: &#39;Q3 FY13;&#39;, waittime: 1841},
+{month: &#39;Q4 FY13;&#39;, waittime: 2805},
+{month: &#39;Q1 FY14;&#39;, waittime: 1665},
+{month: &#39;Q2 FY14;&#39;, waittime: 2977},
+{month: &#39;Q3 FY14;&#39;, waittime: 3247},
+{month: &#39;Q4 FY14;&#39;, waittime: 3146},
+{month: &#39;Q1 FY15;&#39;, waittime: 2581},
+{month: &#39;Q2 FY15;&#39;, waittime: 3491},
+{month: &#39;Q3 FY15;&#39;, waittime: 4587},
+				];
+				$(&quot;#bar-7&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month&quot;
+					},
+					series: [
+						{ valueField: &quot;waittime&quot;, name: &quot;Quarterly Housing Units Permitted&quot;, color: &quot;#7c38bc&quot; },
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: &quot;Quarterly Housing Units Permitted &quot;,
+					legend: {
+						verticalAlignment: &quot;bottom&quot;,
+						horizontalAlignment: &quot;center&quot;
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-7&quot; style=&quot;height: 250px; width: 100%;&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;	
+&lt;/div&gt;												
+&lt;div class=&quot;row&quot;&gt;
+&lt;a name=&quot;datavisitors&quot;&gt;&lt;/a&gt;
+&lt;div class=&quot;panel panel-default&quot;&gt;
+	&lt;div class=&quot;panel-body&quot;&gt;
+		&lt;div class=&quot;col-sm-12&quot;&gt;
+							
+			&lt;script type=&quot;text/javascript&quot;&gt;
+			jQuery(document).ready(function($)
+			{
+				if( ! $.isFunction($.fn.dxChart))
+					return;
+				var dataSource = [
+					{month: &#39;Jul-13&#39;, filed: 146, completed: 162},
+					{month: &#39;Aug-13&#39;, filed: 196, completed: 142},
+					{month: &#39;Sep-13&#39;, filed: 188, completed: 126},
+					{month: &#39;Oct-13&#39;, filed: 271, completed: 172},
+					{month: &#39;Nov-13&#39;, filed: 193, completed: 125},
+					{month: &#39;Dec-13&#39;, filed: 216, completed: 180},
+					{month: &#39;Jan-14&#39;, filed: 213, completed: 143},
+					{month: &#39;Feb-14&#39;, filed: 208, completed: 147},
+					{month: &#39;Mar-14&#39;, filed: 204, completed: 140},
+					{month: &#39;Apr-14&#39;, filed: 276, completed: 196},
+					{month: &#39;May-14&#39;, filed: 252, completed: 165},
+					{month: &#39;Jun-14&#39;, filed: 246, completed: 200},
+					{month: &#39;Jul-14&#39;, filed: 303, completed: 216},
+					{month: &#39;Aug-14&#39;, filed: 314, completed: 160},
+					{month: &#39;Sep-14&#39;, filed: 257, completed: 227},
+					{month: &#39;Oct-14&#39;, filed: 276, completed: 209},
+					{month: &#39;Nov-14&#39;, filed: 248, completed: 180},
+					{month: &#39;Dec-14&#39;, filed: 340, completed: 197},
+					{month: &#39;Jan-15&#39;, filed: 205, completed: 169},
+					{month: &#39;Feb-15&#39;, filed: 251, completed: 182},
+					{month: &#39;Mar-15&#39;, filed: 213, completed: 183},
+					{month: &#39;Apr-15&#39;, filed: 253, completed: 199},
+					{month: &#39;May-15&#39;, filed: 221, completed: 134},
+					{month: &#39;Jun-15&#39;, filed: 249, completed: 239},
+				];
+				$(&quot;#bar-8&quot;).dxChart({
+					dataSource: dataSource,
+					commonSeriesSettings: {
+						argumentField: &quot;month&quot;
+					},
+					series: [
+						{ valueField: &quot;filed&quot;, name: &quot;Cases filed (Monthly)&quot;, color: &quot;#7c38bc&quot; },
+						{ valueField: &quot;completed&quot;, name: &quot;Cases completed (Monthly)&quot;, color: &quot;#40bbea&quot; },
+						
+					],
+					argumentAxis:{
+						grid:{
+							visible: true
+						}
+					},
+					tooltip:{
+						enabled: true
+					},
+					title: &quot;DCP Cases&quot;,
+					legend: {
+						verticalAlignment: &quot;bottom&quot;,
+						horizontalAlignment: &quot;center&quot;
+					},
+					commonPaneSettings: {
+						border:{
+							visible: true,
+							right: false
+						}
+					}
+				});
+			});
+			&lt;/script&gt;
+			&lt;div id=&quot;bar-8&quot; style=&quot;height: 250px; width: 100%;&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</description>
+        <pubDate>Sun, 28 Jun 2015 03:12:25 -0500</pubDate>
+        <link>http://datala.github.io/bradley-tower//bradley-tower/100k-housing</link>
+        <guid isPermaLink="true">http://datala.github.io/bradley-tower//bradley-tower/100k-housing</guid>
+        
+        
+        <category>focus</category>
+        
+      </item>
+    
   </channel>
 </rss>
